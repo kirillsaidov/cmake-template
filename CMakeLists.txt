@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 # project name init
-project(vita
+project(cmake-template
 		VERSION 1.0
 		DESCRIPTION "Vita - a custom C library for memory management, string manipulation and more."
 		LANGUAGES C)
