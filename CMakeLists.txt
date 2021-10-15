@@ -7,8 +7,10 @@ project(cmake-template
 		LANGUAGES C)
 
 # setting default build type
+set(CMAKE_C_STANDARD 11)
 set(default_buid_type "Release")
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)   # for libraries
+# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin) # for binaries 
 
 # finding all headers and sources 
 file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.c)
@@ -17,12 +19,9 @@ file(GLOB_RECURSE HEADERS ${PROJECT_SOURCE_DIR}/inc/*.h)
 # include directories
 include_directories(${PROJECT_SOURCE_DIR}/inc/)
 
-# building library
+# building library/binary
 add_library(${PROJECT_NAME} STATIC ${SOURCES} ${HEADERS})
-
-#message("Installing the library to lib/...")
-#install(TARGETS ${PROJECT_NAME}
-#		ARCHIVE DESTINATION ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY})
+# add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 
 
