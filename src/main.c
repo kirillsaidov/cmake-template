@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include "main.h"
 
-int main(void) {
-	printf("hello, cmake template!\n");
-
-	return 0;
+int32_t main(void) {
+    printf("Hello, CMake project template!\n");
+    return 0;
 }
+
