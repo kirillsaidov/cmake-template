@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 
 # project name init
 project(
@@ -25,6 +25,8 @@ include_directories(${PROJECT_SOURCE_DIR}/inc/)
 add_library(${PROJECT_NAME} STATIC ${SOURCES} ${HEADERS}) # for libraries
 # add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})   # for binaries
 
+# linking 
+# target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/lib/libvita.a)
 
 
 
