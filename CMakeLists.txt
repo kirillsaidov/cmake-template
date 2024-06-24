@@ -18,15 +18,18 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)   # for libraries
 file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.c)
 file(GLOB_RECURSE HEADERS ${PROJECT_SOURCE_DIR}/inc/*.h)
 
+# add subproject
+add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/vita)
+
 # include directories
-include_directories(${PROJECT_SOURCE_DIR}/inc/)
+# include_directories(${PROJECT_SOURCE_DIR}/inc/)
 
 # building library/binary
-add_library(${PROJECT_NAME} STATIC ${SOURCES} ${HEADERS}) # for libraries
-# add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})   # for binaries
+add_library(${PROJECT_NAME} STATIC ${SOURCES} ${HEADERS})	# for libraries
+# add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})   	# for binaries
 
 # linking 
-# target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/lib/libvita.a)
+# target_link_libraries(${PROJECT_NAME} vita)
 
 
 
